@@ -1,0 +1,36 @@
+[Balancer] # Balancer protects against server overload
+Enabled = true 
+BalancerValue = 100 # Max. CPU load
+
+[Bruteforce]
+GenerateHost = false # Generates the IP for the brute by itself ( Not recommended )
+GenererateHostCount = 10000000 
+
+Timeout = 30 # In seconds
+DictionaryPath = "./passwords.txt" # File with passwords
+MaxAttempts = 1 # Max. number of attempts
+Delay = 300 # Delay (in milliseconds. 1000 - 1 sec)
+
+# 1 = ip:port 
+# 2 - ip
+# 3 - ip:login:pass (22 port)
+ServersMode = 3 # servers.txt format
+
+
+# Formats:
+# {ip} - Ip 
+# {port} - Port
+# {login} - Login
+# {password} - Pasword
+# {date} - Current time
+ResultFormat = "{ip}:{port}:{login}:{password}" # result format
+
+[RandomPassword]
+Enabled = true # If Enabled=true, the dictionary is not used
+RandomPasswordLen = 10 # Password length
+RandomCustomPassword = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ12345689" # letters for custom password
+
+    
+[Payload] # Sends your payload to the server
+Enabled = true
+Payload = "mkdir crowbrute"
